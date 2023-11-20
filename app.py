@@ -1,8 +1,10 @@
 import streamlit as st
 import os
 import requests
+
 import warnings
 warnings.filterwarnings("ignore")
+
 from pyspark.ml.recommendation import ALSModel
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import col, expr, udf
@@ -17,7 +19,7 @@ spark = SparkSession.builder.appName("MovieRecommendations").getOrCreate()
 metadata_df = spark.read \
     .option("header", "true") \
     .option("inferSchema", "true") \
-    .json('data/metadata_updated_w_matching_records_only.json')
+    .json('data/metadata_updated.json')
 
 
 metadata_df.printSchema()
@@ -64,7 +66,7 @@ def get_movie_name(movie_id):
 
 
 # Load the pre-trained ALS model
-model = ALSModel.load("best_model")
+model = ALSModel.load("model/best_model")
 
 def recommend(user_id, user_ratings, first_time_user=False, n_movies_to_recommend=10):
 
