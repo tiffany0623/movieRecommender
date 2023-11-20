@@ -17,7 +17,7 @@ spark = SparkSession.builder.appName("MovieRecommendations").getOrCreate()
 metadata_df = spark.read \
     .option("header", "true") \
     .option("inferSchema", "true") \
-    .json('metadata_updated_w_matching_records_only.json')
+    .json('data/metadata_updated_w_matching_records_only.json')
 
 
 metadata_df.printSchema()
