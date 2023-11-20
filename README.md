@@ -1,4 +1,4 @@
-<!-- # Movie Recommendation Engine
+# Movie Recommendation Engine
 
 Movie Recommender is a collaborative filtering-based recommendation engine that provides personalized movie recommendations to users based on their preferences. This project utilises the __Apache Spark__ for model training and __Streamlit__ for building a user-friendly interface. The system uses an ALS (Alternating Least Squares) model trained on a Spark cluster. The trained model is then used to provide movie recommendations to new users using fold-in technique.
 
@@ -28,9 +28,9 @@ To get started with the Movie Recommender system, follow these steps:
 ### Run the Streamlit app:
 ```streamlit run app.py```
 
-### Open a web browser and navigate to http://localhost:8501 to access the Movie Recommender interface. -->
+### Open a web browser and navigate to http://localhost:8501 to access the Movie Recommender interface.
 
-
+<!-- 
 # Movie Recommendation Engine
 
 Movie Recommender is a collaborative filtering-based recommendation engine that provides personalized movie recommendations to users based on their preferences. This project utilizes Apache Spark for model training and Streamlit for building a user-friendly interface. The system uses an ALS (Alternating Least Squares) model trained on a Spark cluster. The trained model is then used to provide movie recommendations to new users using the fold-in technique.
@@ -70,4 +70,4 @@ streamlit run app.py
 ```
 
 ### Open a web browser and navigate to http://localhost:8501 to access the Movie Recommender interface.
-
+ -->
