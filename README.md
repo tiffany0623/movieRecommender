@@ -38,4 +38,4 @@ streamlit run app.py
 
 ### Open a web browser and navigate to http://localhost:8501 to access the Movie Recommender interface.
 
-[![Demo Video](data/demo.mov)](data/demo.mov)
+[![Demo Video](data/demo.mp4)](data/demo.mp4)
