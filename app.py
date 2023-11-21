@@ -22,6 +22,12 @@ metadata_df = spark.read \
     .json('data/metadata_updated.json')
 
 
+# read metadata of movieLensDataset
+top_most_voted_df = spark.read \
+    .option("header", "true") \
+    .option("inferSchema", "true") \
+    .json('data/top_most_voted_1000_movies.json')
+
 metadata_df.printSchema()
 
 def get_imdb_id(movie_id):
@@ -304,7 +310,7 @@ n_random_movies = 10
 
 # Create a session state to store selected movies and posters
 if 'selected_movies' not in st.session_state:
-    selected_movies = metadata_df.orderBy(F.rand()).limit(n_random_movies).collect()
+    selected_movies = top_most_voted_df.orderBy(F.rand()).limit(n_random_movies).collect()
     st.session_state.selected_movies = selected_movies
 
 # Emoji ratings with star ratings
