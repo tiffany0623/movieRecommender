@@ -252,6 +252,21 @@ st.set_page_config(
     layout="wide",)
 
 
+
+# Custom CSS for the dark theme
+st.markdown(
+    """
+    <style>
+    body {
+        background-color: #000000; /* Dark background color */
+        color: #FFFFFF; /* Text color (White) */
+        font-family: 'Comic Sans MS', cursive;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
+
 # Custom CSS for the UI
 st.markdown(
     """
