@@ -80,7 +80,7 @@ def recommend(user_id, user_ratings, first_time_user=False, n_movies_to_recommen
     if first_time_user:
         # if user is first time user then use Fold-in technique to make recommendations
 
-        def foldingIn(user_ratings_df, new_user_id=0, n_movies_to_recommend=5):
+        def foldingIn(user_ratings_df, new_user_id=1111111, n_movies_to_recommend=5):
             '''
             Returns updated user vector after folding in technique.
 
@@ -126,6 +126,16 @@ def recommend(user_id, user_ratings, first_time_user=False, n_movies_to_recommen
 
             recommendations_df = recommendations_df.select("id", "preference_score")
 
+            # Rename the "id" column in recommendations_df to match the column name in user_ratings_df
+            recommendations_df = recommendations_df.withColumnRenamed("id", "movie_id")
+
+            # Filter recommendations that weren't part of users' ratings
+            recommendations_df = recommendations_df.join(
+                user_ratings_df.select("movie_id").distinct(),
+                on="movie_id",
+                how="left_anti").select("movie_id", "preference_score")
+
+            
             # Rank recommendations by preference score in descending order
             recommended_items_df = recommendations_df.orderBy(col("preference_score").desc()).limit(n_movies_to_recommend)
 
@@ -300,7 +310,7 @@ st.markdown("<p style=#9C9D9F; font-size: 18px;'>Welcome to <b>Movie Recommender
 # ------
 n_movies_to_display = 5  #( setting it to 5 for now, movie to display in one row)
 n_random_movies = 10
-top_k_popular_movies = 300
+top_k_popular_movies = 20
     
 
 # Create a session state to store selected movies and posters (showing only top 1000 movies to rate)
@@ -365,7 +375,7 @@ if st.button("Recommend"):
         first_time_user = True
 
         recommended_movie_ids,recommended_movie_names, recommended_movie_posters = \
-            recommend(11111111, user_ratings, first_time_user, n_movies_to_recommend=10)
+            recommend(1111111, user_ratings, first_time_user, n_movies_to_recommend=10)
 
         if len(recommended_movie_names) != 0:
 
