@@ -19,14 +19,8 @@ spark = SparkSession.builder.appName("MovieRecommendations").getOrCreate()
 metadata_df = spark.read \
     .option("header", "true") \
     .option("inferSchema", "true") \
-    .json('data/metadata_updated.json')
+    .json('data/metadata_with_popularity_rank.json')
 
-
-# read metadata of movieLensDataset
-top_most_voted_df = spark.read \
-    .option("header", "true") \
-    .option("inferSchema", "true") \
-    .json('data/top_most_voted_1000_movies.json')
 
 metadata_df.printSchema()
 
@@ -306,11 +300,13 @@ st.markdown("<p style=#9C9D9F; font-size: 18px;'>Welcome to <b>Movie Recommender
 # ------
 n_movies_to_display = 5  #( setting it to 5 for now, movie to display in one row)
 n_random_movies = 10
+top_k_popular_movies = 300
     
 
-# Create a session state to store selected movies and posters
+# Create a session state to store selected movies and posters (showing only top 1000 movies to rate)
 if 'selected_movies' not in st.session_state:
-    selected_movies = top_most_voted_df.orderBy(F.rand()).limit(n_random_movies).collect()
+    selected_movies = metadata_df.where(metadata_df.popularity_rank<=top_k_popular_movies)\
+                        .orderBy(F.rand()).limit(n_random_movies).collect()
     st.session_state.selected_movies = selected_movies
 
 # Emoji ratings with star ratings
