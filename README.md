@@ -3,7 +3,7 @@
 
 https://github.com/shant-kolekar/movieRecommender/assets/97169131/f630c6f6-46b2-4068-b15c-d99af3bca495
 
-
+## Check out app 
 [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://movierecommendationengine.streamlit.app)
 
 
