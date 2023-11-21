@@ -290,7 +290,7 @@ st.markdown(
         align-items: center;
         text-align: center;
         width: 180px;  /* Adjust the width as needed */
-        height: 250px;  /* Fixed height for the container */
+        height: 220px;  /* Fixed height for the container */
     }
     .poster {
         max-width: 90%;  /* Max width for the poster */
