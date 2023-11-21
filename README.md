@@ -1,7 +1,8 @@
 # Movie Recommendation Engine
 
 
-https://github.com/shant-kolekar/movieRecommender/assets/97169131/059d9358-7a08-4baf-bdc9-7686782593f7
+https://github.com/shant-kolekar/movieRecommender/assets/97169131/ac964015-b799-4424-8fb1-c67d0929e7e4
+
 
 
 Movie Recommender is a collaborative filtering-based recommendation engine that provides personalized movie recommendations to users based on their preferences. This project utilizes __Apache Spark__ for model training and __Streamlit__ for building a user-friendly interface. The system uses an ALS (Alternating Least Squares) model trained on a Spark cluster. The trained model is then used to provide movie recommendations to new users using the fold-in technique, instead of Re-training the entire model.
@@ -42,4 +43,4 @@ streamlit run app.py
 
 ### Open a web browser and navigate to http://localhost:8501 to access the Movie Recommender interface.
 
-[![Demo Video](data/demo.mp4)](data/demo.mp4)
+>Demo file at demo/demo.mp4
