@@ -11,6 +11,11 @@ from pyspark.sql.functions import col, expr, udf
 from pyspark.sql.types import ArrayType, FloatType
 import pyspark.sql.functions as F
 
+# Setting up environment variables
+import os
+os.environ["JAVA_HOME"] = "/usr/lib/jvm/java-11-openjdk-amd64"
+
+
 # Creating spark context
 spark = SparkSession.builder.appName("MovieRecommendations").getOrCreate()
 
