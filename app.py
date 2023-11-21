@@ -253,19 +253,6 @@ st.set_page_config(
 
 
 
-# Custom CSS for the dark theme
-st.markdown(
-    """
-    <style>
-    body {
-        background-color: #000000; /* Dark background color */
-        color: #FFFFFF; /* Text color (White) */
-        font-family: 'Comic Sans MS', cursive;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True,
-)
 
 # Custom CSS for the UI
 st.markdown(
@@ -277,7 +264,7 @@ st.markdown(
         font-family: 'Comic Sans MS', cursive;
     }
     .stButton button {
-        background-color: transparent; /* Remove the background color of the button */
+        background-color: #e3a3a3; /* Remove the background color of the button */
         color: #FFFFFF;
         border-radius: 10px;
     }
