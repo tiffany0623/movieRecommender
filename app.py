@@ -264,7 +264,7 @@ st.markdown(
         font-family: 'Comic Sans MS', cursive;
     }
     .movie-container {
-        margin-right: 05px; /* Add margin to create space between movies */
+        margin-right: 20px; /* Add margin to create space between movies */
     }
     .stButton button {
         background-color: #e3a3a3; /* Remove the background color of the button */
@@ -289,11 +289,11 @@ st.markdown(
         flex-direction: column;
         align-items: center;
         text-align: center;
-        width: 200px;  /* Adjust the width as needed */
+        width: 180px;  /* Adjust the width as needed */
         height: 250px;  /* Fixed height for the container */
     }
     .poster {
-        max-width: 100%;  /* Max width for the poster */
+        max-width: 90%;  /* Max width for the poster */
         max-height: 80%;  /* Max height for the poster */
     }
     .caption {
@@ -411,7 +411,9 @@ if st.button("Recommend"):
                 cnt += 1
                 try:
                     with columns[i]:
+                        st.markdown("<div class='movie-container'>", unsafe_allow_html=True)
                         st.image(recommended_movie_posters[i], caption=movie_name, output_format="PNG", width=200)
+                        st.markdown("</div>", unsafe_allow_html=True)
                 except:
                     st.markdown(f"![{movie_name}]({recommended_movie_posters[i]})")
 
