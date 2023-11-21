@@ -263,6 +263,9 @@ st.markdown(
         color: #FFD700;            /* Text color (Gold) */
         font-family: 'Comic Sans MS', cursive;
     }
+    .movie-container {
+        margin-right: 20px; /* Add margin to create space between movies */
+    }
     .stButton button {
         background-color: #e3a3a3; /* Remove the background color of the button */
         color: #FFFFFF;
@@ -356,12 +359,16 @@ for i, movie in enumerate(st.session_state.selected_movies):
     poster_url = fetch_poster(imdb_id)
     if poster_url is not None:  # Check if a movie poster is found
         with columns[cnt]:
+            # Add a custom CSS class for movie containers
+            st.markdown("<div class='movie-container'>", unsafe_allow_html=True)
+
             st.image(poster_url, caption="", output_format="PNG", width=image_width)
             with st.container():
                 st.text(movie_name)
             rating = st.selectbox(f"", list(emoji_ratings.keys()), key=movie_name, format_func=lambda x: x.split(" (")[0])
             if rating != 'Rate the movie':
                 user_ratings[movie_id] = rating
+            st.markdown("</div>", unsafe_allow_html=True)
         cnt += 1
 
 print(user_ratings)
