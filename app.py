@@ -264,7 +264,7 @@ st.markdown(
         font-family: 'Comic Sans MS', cursive;
     }
     .movie-container {
-        margin-right: 20px; /* Add margin to create space between movies */
+        margin-right: 40px; /* Add margin to create space between movies */
     }
     .stButton button {
         background-color: #e3a3a3; /* Remove the background color of the button */
