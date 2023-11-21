@@ -1,6 +1,6 @@
 # Movie Recommendation Engine
 
-Movie Recommender is a collaborative filtering-based recommendation engine that provides personalized movie recommendations to users based on their preferences. This project utilizes __Apache Spark__ for model training and __Streamlit__ for building a user-friendly interface. The system uses an ALS (Alternating Least Squares) model trained on a Spark cluster. The trained model is then used to provide movie recommendations to new users using the fold-in technique, instead of Re-training entire model.
+Movie Recommender is a collaborative filtering-based recommendation engine that provides personalized movie recommendations to users based on their preferences. This project utilizes __Apache Spark__ for model training and __Streamlit__ for building a user-friendly interface. The system uses an ALS (Alternating Least Squares) model trained on a Spark cluster. The trained model is then used to provide movie recommendations to new users using the fold-in technique, instead of Re-training the entire model.
 
 ## Overview
 
