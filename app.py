@@ -320,7 +320,7 @@ st.markdown("<p style=#9C9D9F; font-size: 18px;'>Welcome to <b>Movie Recommender
 # ------
 n_movies_to_display = 5  #( setting it to 5 for now, movie to display in one row)
 n_random_movies = 10
-top_k_popular_movies = 500
+top_k_popular_movies = 1000
     
 
 # Create a session state to store selected movies and posters (showing only top 1000 movies to rate)
